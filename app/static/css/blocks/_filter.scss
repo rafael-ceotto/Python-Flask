@@ -1,0 +1,9 @@
+.filter{
+    &__form{
+        display: grid;
+        button[type="submit"]{
+            margin-top: 1rem;
+        }
+    
+    }
+}

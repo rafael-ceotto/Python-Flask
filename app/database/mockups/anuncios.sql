@@ -1,0 +1,10 @@
+INSERT INTO anuncios (cliente_id, produto_id, imagem, descricao, telefone, email, ativo, data_criacao, data_edicao) VALUES
+(1, 1, 'celular.jpg', 'Vendo celular em perfeito estado, com poucos meses de uso. Ótimo para trabalho e entretenimento.', '(11) 98765-4321', 'joao.silva@example.com', true, '2024-04-21', '2024-04-21'),
+(2, 1, 'notebook.jpg', 'Vendo notebook usado, porém em excelente estado. Perfeito para estudantes e profissionais.', '(11) 98765-4321', 'joao.silva@example.com', true, '2024-04-21', '2024-04-21'),
+(3, 1, 'camera.jpg', 'Vendo câmera fotográfica profissional em perfeito estado. Ideal para fotógrafos amadores e profissionais.', '(21) 99876-5432', 'maria.santos@example.com', true, '2024-04-21', '2024-04-21'),
+(4, 1, 'impressora.jpg', 'Vendo impressora multifuncional em ótimo estado. Ideal para uso doméstico e pequenos escritórios.', '(21) 99876-5432', 'maria.santos@example.com', true, '2024-04-21', '2024-04-21'),
+(5, 1, 'tablet.jpg', 'Vendo tablet em bom estado, perfeito para leitura e entretenimento. Acompanha capa protetora.', '(31) 98765-1234', 'pedro.oliveira@example.com', true, '2024-04-21', '2024-04-21'),
+(6, 1, 'smartwatch.jpg', 'Vendo smartwatch novo, com diversas funções. Ideal para monitorar atividades físicas e receber notificações.', '(31) 98765-1234', 'pedro.oliveira@example.com', true, '2024-04-21', '2024-04-21'),
+(7, 1, 'bicicleta.jpg', 'Vendo bicicleta em excelente estado de conservação. Ótima para passeios e exercícios.', '(41) 99876-9876', 'ana.costa@example.com', true, '2024-04-21', '2024-04-21'),
+(8, 1, 'patinete.jpg', 'Vendo patinete elétrico em bom estado. Ideal para locomoção urbana rápida e sustentável.', '(41) 99876-9876', 'ana.costa@example.com', true, '2024-04-21', '2024-04-21'),
+(9, 1, 'console.jpg', 'Vendo console de vídeo game de última geração em perfeito estado. Acompanha dois controles.', '(51) 98765-8765', 'lucas.pereira@example.com', true, '2024-04-21', '2024-04-21')

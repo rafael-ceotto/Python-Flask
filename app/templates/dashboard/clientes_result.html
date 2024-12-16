@@ -1,0 +1,19 @@
+<header>
+  <strong>Lista de clientes</strong>
+</header>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Email</th>
+      <th>Telefone</th>
+      <th>Endereço</th>
+      <th>Ações</th>
+    </tr>
+  </thead>
+  <tbody id="item_cliente">
+    {% for cliente in clientes %}
+      {% include 'dashboard/clientes_item.html' %}
+    {% endfor %}
+  </tbody>
+</table>

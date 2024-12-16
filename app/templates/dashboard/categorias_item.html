@@ -1,0 +1,8 @@
+<tr id="item_categoria_{{ categoria.id }}">
+    <td>{{ categoria.nome }}</td>
+    <td>{{ categoria.ativo }}</td>
+    <td>
+        <a class="btn btn-sm btn-primary" hx-get="/dashboard/categorias/editar_formulario/{{ categoria.id }}" hx-swap="innerHTML" hx-target="#form_section">Editar</a>
+        <a class="btn btn-sm btn-danger" hx-delete="/dashboard/categorias/deletar_categoria/{{ categoria.id }}" hx-swap="innerHTML" hx-target="#result_section">Excluir</a>
+    </td>
+</tr>

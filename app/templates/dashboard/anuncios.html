@@ -1,0 +1,9 @@
+{% extends 'dashboard/shared/layout.html' %}
+
+{% block content %}
+  <div class="container">
+    <section id="form_section" hx-get="{{ url_for('anuncio_dashboard.formulario_adicionar') }}" hx-trigger="load"></section>
+    <hr />
+    <section id="result_section" hx-get="{{ url_for('anuncio_dashboard.todos_anuncios') }}" hx-trigger="load"></section>
+  </div>
+{% endblock %}

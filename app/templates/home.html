@@ -1,0 +1,107 @@
+{% extends 'shared/layout.html' %}
+
+{% block content %}
+  <section class="hero__content">
+    <span class="hero__circles hero__circles--left hero__circles--br d-none d-xl-flex"></span>
+    <span class="hero__circles hero__circles--right hero__circles--usa d-none d-xl-flex"></span>
+    <section class="hero__section">
+      <div class="container d-flex flex-column justify-content-center align-items-center">
+        <header class="hero__header">
+          Encontre um <strong>profissional brasileiro</strong><br /> perto de você!
+        </header>
+        <form action="/buscar" method="get" class="search__form">
+          <div class="input-group mb-3">
+            <input type="text" class="form-control" name="q" placeholder="O que você procura?" />
+            <!--     select class="form-select" name="states">
+            <option>Selecione o Estado</option>
+            <option value="Alabama">Alabama</option>
+            <option value="Alasca">Alasca</option>
+            <option value="Arizona">Arizona</option>
+            <option value="Arkansas">Arkansas</option>
+            <option value="Califórnia">Califórnia</option>
+            <option value="Colorado">Colorado</option>
+            <option value="Connecticut">Connecticut</option>
+            <option value="Delaware">Delaware</option>
+            <option value="Flórida">Flórida</option>
+            <option value="Geórgia">Geórgia</option>
+            <option value="Havaí">Havaí</option>
+            <option value="Idaho">Idaho</option>
+            <option value="Illinois">Illinois</option>
+            <option value="Indiana">Indiana</option>
+            <option value="Iowa">Iowa</option>
+            <option value="Kansas">Kansas</option>
+            <option value="Kentucky">Kentucky</option>
+            <option value="Louisiana">Louisiana</option>
+            <option value="Maine">Maine</option>
+            <option value="Maryland">Maryland</option>
+            <option value="Massachusetts">Massachusetts</option>
+            <option value="Michigan">Michigan</option>
+            <option value="Minnesota">Minnesota</option>
+            <option value="Mississippi">Mississippi</option>
+            <option value="Missouri">Missouri</option>
+            <option value="Montana">Montana</option>
+            <option value="Nebraska">Nebraska</option>
+            <option value="Nevada">Nevada</option>
+            <option value="New Hampshire">New Hampshire</option>
+            <option value="Nova Jersey">Nova Jersey</option>
+            <option value="Novo México">Novo México</option>
+            <option value="Nova York">Nova York</option>
+            <option value="Carolina do Norte">Carolina do Norte</option>
+            <option value="Dakota do Norte">Dakota do Norte</option>
+            <option value="Ohio">Ohio</option>
+            <option value="Oklahoma">Oklahoma</option>
+            <option value="Oregon">Oregon</option>
+            <option value="Pensilvânia">Pensilvânia</option>
+            <option value="Rhode Island">Rhode Island</option>
+            <option value="Carolina do Sul">Carolina do Sul</option>
+            <option value="Dakota do Sul">Dakota do Sul</option>
+            <option value="Tennessee">Tennessee</option>
+            <option value="Texas">Texas</option>
+            <option value="Utah">Utah</option>
+            <option value="Vermont">Vermont</option>
+            <option value="Virgínia">Virgínia</option>
+            <option value="Washington">Washington</option>
+            <option value="Virgínia Ocidental">Virgínia Ocidental</option>
+            <option value="Wisconsin">Wisconsin</option>
+            <option value="Wyoming">Wyoming</option>
+          </select     -->
+            <button type="submit" class="btn btn-primary">Buscar</button>
+          </div>
+        </form>
+      </div>
+    </section>
+    <section class="featured__section">
+      <div class="container">
+        <header class="featured__header">Serviços mais procurados:</header>
+        <ul class="featured__list">
+          {% for categoria in categorias %}
+            <li>
+              <a href="/buscar?categorias={{ categoria.nome }}">
+                <img src="/static/images/icones/{{ categoria.imagem }}.svg" alt="Cleaner" onerror="this.src='/static/images/cleaner-service.svg'" />
+                <span>{{ categoria.nome }}</span>
+              </a>
+            </li>
+          {% endfor %}
+        </ul>
+        <a href="{{ url_for('main.categorias') }}" class="btn btn-primary featured__button">Ver todas as categorias</a>
+      </div>
+    </section>
+  </section>
+  <section class="adverts__section">
+    <div class="container">
+      <div class="row flex-column-reverse flex-md-row">
+        <div class="col-12 col-md-5 offset-md-2">
+          <header class="adverts__header">Anuncie seu serviço</header>
+          <p class="adverts__text">
+            Por apenas <strong>$14.50 por mês</strong>, você pode anunciar os seus serviços à comunidade brasileira que procura por profissionais falantes do idioma português.
+          </p>
+
+          <a href="{{ url_for('main.whatsapp') }}" class="btn btn-primary adverts__button" target="_blank"><i class="bi bi-whatsapp"></i> Anuncie agora!</a>
+        </div>
+        <div class="col-12 col-md-3 d-flex justify-content-center justify-md-content-end mb-5 mb-md-0">
+          <img src="/static/images/adverts-section.png" alt="Anuncie seu serviço" class="img-fluid" />
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock %}

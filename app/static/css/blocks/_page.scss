@@ -1,0 +1,17 @@
+.page{
+    &__header{
+        background-color: var(--c-us-blue);
+        padding: 1rem 0;
+        text-align: center;
+        height:150px;
+        color:#FFF;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 2rem;
+    }
+
+    &__section{
+        padding: 0 0 3rem;
+    }
+}

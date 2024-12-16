@@ -1,0 +1,8 @@
+<form class="form__group" hx-get="{{ url_for('regiao_dashboard.search')}}" hx-swap="innerHTML" hx-target="#result_section">
+    <div class="input-group mb-3">
+        <input type="text" name="nome" class="form-control" placeholder="Localização" aria-label="Localização" aria-describedby="basic-addon1">
+        <button type="submit" class="btn btn-sm btn-primary">
+            <i class="bi bi-funnel"></i> Filtrar
+        </button>
+    </div>
+</form>

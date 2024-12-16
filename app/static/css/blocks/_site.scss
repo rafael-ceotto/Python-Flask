@@ -1,0 +1,41 @@
+.site {
+  &__header {
+    box-shadow: 0 0 0 2px rgba(0, 0, 0, .1);
+  }
+
+  &__footer {
+
+
+    background-color: var(--c-us-blue);
+    padding: 3rem 0 5rem;
+    color: var(--c-white);
+
+    img {
+      margin-bottom: 1.5rem;
+    }
+
+    a {
+      color: var(--c-white);
+      text-decoration: none;
+
+      &:hover {
+        color: var(--c-br-yellow);
+      }
+    }
+
+    .list-group {
+      &-item {
+        background-color: transparent;
+        border: none;
+        padding: 0;
+      }
+    }
+
+    .bi.bi-instagram.gradient {
+      background: #833ab4;
+      background: linear-gradient(to right,
+              #833ab4, #fd1d1d, #fcb045
+      );
+    }
+  }
+}

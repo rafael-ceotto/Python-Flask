@@ -1,0 +1,10 @@
+<tr id="cliente-{{ cliente.id }}">
+  <td>{{ cliente.nome }}</td>
+  <td>{{ cliente.email }}</td>
+  <td>{{ cliente.telefone }}</td>
+  <td>{{ cliente.endereco }}</td>
+  <td>
+    <a hx-get="{{ url_for('cliente_dashboard.editar_cliente', cliente_id=cliente.id)}}" hx-swap="innerHTML" hx-target="#form_section" class="btn btn-primary btn-sm" >Editar</a>
+    <a hx-delete="{{ url_for('cliente_dashboard.excluir_cliente', cliente_id=cliente.id)}}" hx-swap="innerHTML" hx-target="#result_section" class="btn btn-danger btn-sm">Excluir</a>
+  </td>
+</tr>

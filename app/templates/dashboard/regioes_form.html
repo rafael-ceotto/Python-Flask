@@ -1,0 +1,35 @@
+{% if regiao %}
+    <header class="form__header">
+        <strong>Editar Região</strong>
+    </header>
+    <form class="row g-3 form__group" hx-put="/dashboard/regioes/editar_regiao/{{ regiao.id }}" hx-ext="json-enc"
+          hx-swap="outerHTML" hx-target="#item_regiao_{{ regiao.id }}">
+{% else %}
+    <header class="form__header">
+        <strong>Cadastrar Região</strong>
+    </header>
+    <form class="row g-3 form__group" hx-post="/dashboard/regioes/adicionar_regiao" hx-ext="json-enc"
+          hx-swap="beforeend" hx-target="#item_regiao" hx-on::after-request="this.reset()">
+{% endif %}
+        <div class="mb-1 col-12 col-md-6">
+            <label for="nome" class="form-label">Local:</label>
+            <input type="text" class="form-control form-control-sm" id="nome" name="nome" {% if regiao %} value="{{ regiao.nome }}"{% endif %} placeholder="ex.: Nova York, NY" >
+        </div>
+        <!--div class="mb-1 col-12 col-md-6">
+            <label for="pai_id" class="form-label">Região Pai:</label>
+            <input type="text" class="form-control form-control-sm" id="pai_id" name="pai_id" {% if regiao %}
+                value="{{ regiao.pai_id }}"{% endif %} placeholder="ex.: Nova York">
+        </div -->
+        <div class="mb-1 col-12 col-md-6">
+            <label for="latlong" class="form-label">Geolocalização:</label>
+            <input type="text" class="form-control form-control-sm" id="latlong" name="latlong" {% if regiao %}
+                value="{{ regiao.latlong }}"{% endif %} placeholder="ex.: 40.7128,-74.0060">
+        </div>
+
+        <div class="justify-content-end d-flex gap-2">
+            {% if regiao %}
+                <button type="button" hx-get="{{url_for('regiao_dashboard.adicionar_formulario')}}" hx-target="#form_section" hx-swap="innerHTML" class="btn btn-sm btn-light"><i class="bi bi-trash3"></i> Cancelar</button>
+            {% endif %}
+            <button type="submit" class="btn btn-sm btn-success"><i class="bi bi-floppy"></i> Salvar</button>
+        </div>
+    </form>

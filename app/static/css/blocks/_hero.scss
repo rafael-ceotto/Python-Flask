@@ -1,0 +1,73 @@
+.hero {
+    &__content{
+        padding: 2.5rem 0 0;
+        overflow: hidden;
+        width: 100%;
+        position: relative;
+    }
+
+    &__header {
+        font-size: 1.5rem;
+        text-align: center;
+        line-height: 2rem;
+        color: var(--c-us-blue);
+        font-weight: 500;
+        margin-bottom: 2rem;
+
+        strong {
+            font-weight: bold;
+            color: var(--c-br-green);
+        }
+
+        @media (min-width: 768px){
+            font-size: 3rem;
+            line-height: 3.5rem;
+        }
+    }
+
+    &__circles{
+        width: 480px;
+        height: 480px;
+        background-color: var(--bs-white);
+        display: block;
+        position: absolute;
+        z-index: 0;
+        border-radius: 50%;
+        border: 16px solid var(--bs-gray-300);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        &::before{
+            content: '';
+            position: absolute;
+            width: calc(100% - 1rem);
+            height: calc(100% - 1rem);
+            border-radius: 50%;
+            background-color: var(--bs-white);
+            border:16px solid var(--bs-gray-200);
+            z-index: -1;
+        }
+    }
+
+    &__circles--left{
+        left: -256px;
+    }
+
+    &__circles--right{
+        right: -256px;
+    }
+
+    &__circles--br{
+        border: 16px solid var(--c-br-green);
+        &::before{
+            border: 16px solid var(--c-br-yellow);
+        }
+    }
+    &__circles--usa{
+        border: 16px solid var(--c-us-blue);
+        &::before{
+            border: 16px solid var(--c-us-red);
+        }
+    }
+
+}

@@ -1,0 +1,23 @@
+<header class="result__header">
+    <strong>Resultado de Regiões</strong>
+</header>
+{% include "dashboard/regioes_search.html" %}
+<table class="table table-hover result__table">
+    <thead>
+        <tr>
+            <th>Localização</th>
+            <th width="30%"class="text-center">Geolocalização</th>
+            <th width="20%" class="text-center">Ações</th>
+        </tr>
+    </thead>
+    <tbody id="item_regiao">
+        {% if regioes|length == 0 %}
+            <tr>
+                <td colspan="3" class="text-center">Nenhuma regiao cadastrada</td>
+            </tr>
+        {% endif %}
+        {% for regiao in regioes %}
+            {% include "dashboard/regioes_item.html" %}
+        {% endfor %}
+    </tbody>
+</table>

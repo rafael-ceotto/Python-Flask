@@ -1,0 +1,36 @@
+.contato {
+  &__form {
+    input,
+    select,
+    textarea {
+      padding: 0.5rem;
+      color: black;
+    }
+    input.required-error,
+    select.required-error,
+    textarea.required-error {
+      border-color: red;
+    }
+
+    input.invalid-error,
+    select.invalid-error,
+    textarea.invalid-error {
+      border-color: red;
+    }
+
+    button {
+      background-color: var(--c-br-green);
+      border-color: var(--c-br-green);
+      border-radius: 0.3125rem;
+      transition: linear 0.3s;
+      padding: 0.3rem 1.5rem;
+    }
+  }
+}
+
+.error__summary {
+  li {
+    color: red;
+    font-size: 0.875rem;
+  }
+}

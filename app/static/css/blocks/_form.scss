@@ -1,0 +1,18 @@
+.form {
+    &__header {
+        padding: 0.5rem;
+        border-bottom: 1px solid #EFEFEF;
+        background-color: var(--bs-light);
+    }
+
+    &__group {
+        padding: 1rem 1rem 0.5rem;
+    }
+
+    &__section {
+        border: 1px solid #efefef;
+        border-radius: 5px;
+        box-shadow: 0px 1px 0px 0px rgba(0, 0, 0, 0.2);
+        margin-bottom: 2rem;
+    }
+}

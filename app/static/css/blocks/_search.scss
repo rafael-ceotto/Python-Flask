@@ -1,0 +1,53 @@
+.search {
+    &__form {
+        width: 100%;
+
+        .input-group {
+            border: 2px solid var(--c-br-green);
+            border-radius: 10px;
+            width: 100%;
+        }
+
+        .btn,
+        .form-control,
+        .form-select {
+            padding: 0.3rem;
+        }
+
+        .form-control:first-child {
+            width: 30%;
+        }
+
+        .btn {
+            border-radius: 8px;
+            padding: 0.3rem 1.5rem;
+            background: var(--c-br-green);
+            border: none;
+            transition: linear 0.3s;
+            font-weight: bold;
+
+            &:hover {
+                background: var(--c-br-yellow);
+                color: var(--c-us-blue);
+            }
+        }
+
+        @media (min-width:768px) {
+            width: 60%;
+
+            .btn,
+            .form-control,
+            .form-select {
+                padding: 0.8rem;
+            }
+
+            .form-control:first-child {
+                width: 30%;
+            }
+    
+            .btn {
+                padding: 0.8rem 1.5rem;
+            }
+        }
+    }
+}

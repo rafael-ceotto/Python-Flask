@@ -1,0 +1,83 @@
+  {% if cliente %}
+  <header class="form__header">
+    <strong>Editar Cliente</strong>
+  </header>
+  
+  <form 
+    hx-put="{{url_for('cliente_dashboard.atualizar_cliente', cliente_id=cliente.id)}}"
+    hx-swap="outerHTML"
+    hx-target="#cliente-{{cliente.id}}" 
+    hx-on::after-request="clear_after_update('{{ url_for('cliente_dashboard.form_cliente') }}');"
+    hx-ext="json-enc"
+    class="form__group d-flex justify-content-between border rounded-1 align-items-start gap-3">
+
+  {% else %}
+  <header class="form__header">
+    <strong>Cadastrar Cliente</strong>
+  </header>
+  <form 
+    hx-post="{{url_for('cliente_dashboard.inserir_cliente')}}"
+    hx-swap="beforeend"
+    hx-target="#item_cliente" 
+    hx-ext="json-enc"
+    class="form__group d-flex justify-content-between border rounded-1 align-items-start gap-3">
+  {% endif %}
+  <fieldset class="p-2 w-100">
+    <div class="form-group mb-3">
+      <label for="nome">Nome Completo</label>
+      <input type="text" class="form-control" id="nome" name="nome" placeholder="Informe o nome completo" {% if cliente %}value="{{cliente.nome}}"{% endif %} />
+    </div>
+    <div class="form-group mb-3">
+      <label for="data_nascimento">Data de Nascimento</label>
+      <input type="date" class="form-control" id="data_nascimento" name="data_nascimento" placeholder="Informe a data se nascimento" {% if cliente %}value="{{cliente.data_nascimento}}"{% endif %} />
+    </div>
+    <div class="form-group mb-3">
+      <label for="sexo">Sexo</label>
+      <select class="form-select" name="sexo" id="sexo" >
+        <option>Selecione</option>
+        <option value="M" {% if cliente and cliente.sexo == "M" %}selected{% endif %}>Masculino</option>
+        <option value="F" {% if cliente and cliente.sexo == "F" %}selected{% endif %}>Feminino</option>
+      </select>
+    </div>
+    <div class="form-group mb-3">
+      <label for="email">Email</label>
+      <input type="email" class="form-control" id="email" name="email" placeholder="Informe o email" {% if cliente %}value="{{cliente.email}}"{% endif %} />
+    </div>
+
+  </fieldset>
+
+  <fieldset class="p-2 w-100">
+    <div class="d-flex w-100 gap-3">
+      <div class="form-group w-100 mb-3">
+        <label for="telefone">Telefone</label>
+        <input type="text" class="form-control" id="telefone" name="telefone" placeholder="Informe o telefone" {% if cliente %}value="{{cliente.telefone}}"{% endif %} />
+      </div>
+      <div class="form-group w-100 mb-3">
+        <label for="cep">CEP</label>
+        <input type="text" class="form-control" id="cep" name="cep" placeholder="Informe o CEP" {% if cliente %}value="{{cliente.cep}}"{% endif %}/>
+      </div>
+    </div>
+
+    <div class="form-group mb-3">
+      <label for="endereco">Endereço</label>
+      <textarea class="form-control" id="endereco" name="endereco" placeholder="Informe o endereço">{% if cliente %}{{cliente.endereco}}{% endif %}</textarea>
+    </div>
+
+    <div class="form-group mb-3">
+      <label for="cidade">Cidade</label>
+      <input type="text" class="form-control" id="cidade" name="cidade" placeholder="Informe o endereço" {% if cliente %}value="{{cliente.cidade}}"{% endif %}>
+    </div>
+
+    <div class="form-group mb-3">
+      <label for="estado">Estado</label>
+      <input type="text" class="form-control" id="estado" name="estado" placeholder="Informe o endereço" {% if cliente %}value="{{cliente.estado}}"{% endif %}>
+    </div>
+
+    <div class="form-group justify-content-end d-flex gap-3">
+      {% if cliente %}
+        <button type="button" hx-get="{{url_for('cliente_dashboard.form_cliente')}}" hx-target="#form_section" hx-swap="innerHTML" class="btn btn-secondary">Cancelar</button>
+      {% endif %}
+      <button type="submit" class="btn btn-primary">Salvar</button>
+    </div>
+  </fieldset>
+</form>

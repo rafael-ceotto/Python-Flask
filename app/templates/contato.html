@@ -1,0 +1,54 @@
+{% extends 'shared/layout.html' %}
+
+{% block content %}
+  <section class="page__section">
+    <header class="page__header">
+      <div class="container">
+        <h1 style="text-align: center;">Contato</h1>
+      </div>
+    </header>
+    <div class="container">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item">
+            <a href="/">Home</a>
+          </li>
+          <li class="breadcrumb-item active" aria-current="page">Contato</li>
+        </ol>
+      </nav>
+
+      <p>Se tiver alguma dúvida ou preocupação, entre em contato conosco por meio dos canais de suporte disponibilizados em nosso website. Obrigado por escolher o Brasil na Gringa.</p>
+      <div class="row">
+        <div class="col-12 col-md-8 offset-md-2">
+          <ul class="error__summary"></ul>
+          <form method="POST" action="/contato/register" class="contato__form" novalidate>
+            <div class="mb-3">
+              <input type="text" id="form4Example1" class="form-control" name="nome" placeholder="Nome" required />
+            </div>
+            <div class="mb-3">
+              <input type="text" id="form4Example2" class="form-control" name="telefone" placeholder="Telefone" required />
+            </div>
+            <div class="mb-3">
+              <input type="email" id="form4Example2" class="form-control" name="email" placeholder="E-mail" pattern="^[a-z0-9.]+@[a-z0-9]+\.[a-z]+\.([a-z]+)?$" required />
+            </div>
+            <div class="mb-3">
+              <select class="form-select" name="assunto" aria-label="Default select example" required>
+                <option value="" selected>Selecione o assunto</option>
+                <option>Sugestão</option>
+                <option>Dúvida</option>
+                <option>Reclamação</option>
+                <option>Outros</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <textarea class="form-control" id="form4Example3" rows="5" name="mensagem" placeholder="Mensagem" required></textarea>
+            </div>
+            <div class="mb-3 d-flex justify-content-end">
+              <button type="submit" class="btn btn-sm btn-primary">Enviar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock %}

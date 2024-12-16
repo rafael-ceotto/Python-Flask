@@ -1,0 +1,33 @@
+{% extends 'shared/layout.html' %}
+
+{% block content %}
+  <section class="page__section">
+    <header class="page__header">
+      <div class="container">
+        <h1 style="text-align: center;">Categorias de Serviços</h1>
+      </div>
+    </header>
+    <div class="container">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item">
+            <a href="/">Home</a>
+          </li>
+          <li class="breadcrumb-item active" aria-current="page">Categorias de Serviços</li>
+        </ol>
+      </nav>
+      <ul class="category__list">
+        {% for categoria in categorias %}
+          <li class="category__item">
+            <a href="/buscar/{{categoria.nome.lower()}}" class="category__link">
+              <figure>
+                <img src="/static/images/{{categoria.imagem}}" alt="Categoria 1" class="category__img" onerror="this.src='/static/images/thumb.png'" />
+                <figcaption>{{categoria.nome}}</figcaption>
+              </figure>
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </section>
+{% endblock %}

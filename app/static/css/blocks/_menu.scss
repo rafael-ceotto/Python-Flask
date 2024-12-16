@@ -1,0 +1,53 @@
+.menu {
+  &__navigation {
+    padding: 0.5rem 0;
+    background: none;
+    display: flex;
+    align-items: center;
+
+    @media (min-width: 768px) {
+      padding: 2rem 0;
+    }
+
+    a.nav-link {
+      font-size: 1.25rem;
+      color: var(--c-black);
+      margin-inline: 0.5rem;
+    }
+
+    div.navbar-nav {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &__aside{
+
+  }
+
+  &__item{
+    &:first-child{
+      background-color: var(--bs-dark);
+      color:var(--bs-light)
+    }
+    padding: 0.5rem;
+  }
+
+  &__button {
+    padding: 0 0.5rem;
+    font-size: 1.5rem;
+    border: none;
+    &:focus{
+      box-shadow: 0 0 0 0;
+    }
+  }
+
+  &__whatsapp {
+    background-color: var(--c-br-green);
+    border-color: var(--c-br-green);
+    border-radius: 0.625rem;
+    border: none;
+    padding: 0.5rem 1rem;
+    font-size: 1.25rem;
+  }
+}

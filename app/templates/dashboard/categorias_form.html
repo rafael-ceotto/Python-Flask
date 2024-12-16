@@ -1,0 +1,33 @@
+{% if categoria %}
+    <form class="row g-3" hx-put="/dashboard/categorias/editar_categoria/{{ categoria.id }}" hx-ext="json-enc"
+          hx-swap="outerHTML" hx-target="#item_categoria_{{ categoria.id }}" hx-on::after-request="this.reset()">
+{% else %}
+    <form class="row g-3" hx-post="/dashboard/categorias/adicionar_categoria" hx-ext="json-enc"
+          hx-swap="beforeend" hx-target="#item_categoria" hx-on::after-request="this.reset()">
+{% endif %}
+
+    <div class="mb-3">
+        <label for="imagem" class="form-label">Imagem</label>
+        <input type="file" class="form-control" id="imagem" name="imagem">
+    </div>
+    <div class="mb-3">
+        <label for="nome" class="form-label">Nome</label>
+        <input type="text" class="form-control" id="nome" name="nome" {% if categoria %} value="{{ categoria.nome }}"{% endif %}>
+    </div>
+    <div class="mb-3">
+        <label for="pai_id" class="form-label">Pai Id</label>
+        <input type="number" class="form-control" id="pai_id" name="pai_id" {% if categoria %} value="{{ categoria.pai_id }}"{% endif %}>
+    </div>
+    <div class="mb-3">
+        <label for="descricao" class="form-label">Descrição</label>
+        <input type="text" class="form-control" id="descricao" name="descricao" {% if categoria %} value="{{ categoria.descricao }}"{% endif %}>
+    </div>
+    <div class="form-check mb-3">
+        <input class="form-check-input" type="checkbox" name="ativo" id="ativo" {% if categoria %} value="{{ categoria.ativo }}"{% endif %}>
+        <label class="form-check-label" for="ativo">
+            Ativo
+        </label>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>

@@ -1,0 +1,16 @@
+.social{
+    &__header{
+        font-size:1.250rem;
+        font-weight: bold;
+        margin-bottom: 1rem;
+    }
+    &__section{
+        .list-group{
+            a{
+                font-size:1.125rem;
+                line-height: 1.625;
+            }
+        }
+    }
+
+}

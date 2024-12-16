@@ -1,0 +1,18 @@
+.breadcrumb {
+    &-item {
+        a {
+            color: #888;
+            text-decoration: none;
+            transition: linear .3s;
+            &:hover{
+                color: #000;
+            }
+        }
+
+        &.active {
+                color: #000;
+                font-weight: bold;
+
+        }
+    }
+}
