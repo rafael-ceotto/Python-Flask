@@ -1,15 +1,11 @@
-# Bazil na Gringa
+Open the terminal
 
-## Getting Start
+type the command: python -m venv .venv and activate it by typing .venv\Scripts\activate 
 
-Para rodar este projeto você precisa realizar os seguintes passos:
+install the dependencies by using the command: pip install -r requirements.txt
 
-1. Abra o terminal
+to run, type: ./run.bat
 
-2. Devemos configurar o ambiente virtual, para isto digite o seguinte comando no seu terminal: ```python -m venv .venv```
+This website is a professional website developed with python and flask for the Brazilian community with the purpose of show, mainly to another Brazilians, what type of job they do here in the U.S and how they can help each other.
 
-3. Em seguida devemos ativar o ambiente virtual digitando este comando: ```.venv\Scripts\activate ```
-
-4. Finalizado a ativação devemos instalar as depencias deste projeto: ```pip install -r requirements.txt```
-
-5. Para rodar a aplicaçào, digite no terminal do seguinte comando: ```./run.bat```
+It was developed by me and my business partner Israel Correa.
