@@ -9,3 +9,5 @@ to run, type: ./run.bat
 This website is a professional website developed with python and flask for the Brazilian community with the purpose of show, mainly to another Brazilians, what type of job they do here in the U.S and how they can help each other.
 
 It was developed by me and my business partner Israel Correa.
+
+For some reason GH display as HTML but this is a python-flask project!
